@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - Gaming Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loader" class="loader-overlay">
+    <div class="loader-ring"></div>
+    <span class="loader-text">LOADING HUB</span>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particlesCanvas"></canvas>
+
+  <nav class="navbar glass-nav" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.html" class="active">Profile</a></li>
+        <li class="nav-cta"><a href="login.html" class="btn-neon">Sign Out</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px;">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>👤 My Profile</h2>
+        <span class="sub-label">Gamer Stats & Achievements</span>
+      </div>
+
+      <!-- Profile Header -->
+      <div class="glass-panel animate-fade-up" style="text-align:left;padding:40px;margin-bottom:30px;">
+        <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:center;">
+          <!-- Avatar -->
+          <div style="text-align:center;flex:0 0 auto;">
+            <div style="width:120px;height:120px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-size:4rem;margin:0 auto;border:3px solid rgba(0,212,255,0.3);box-shadow:0 0 40px rgba(0,212,255,0.2);">
+              🎮
+            </div>
+            <h3 style="margin-top:12px;font-family:var(--font-display);font-size:1.2rem;">Gamer_Shahzaib</h3>
+            <span style="color:var(--gray-text);font-size:0.85rem;">Member since 2026</span>
+            <div style="margin-top:8px;">
+              <span style="display:inline-block;padding:2px 12px;background:rgba(0,212,255,0.1);border-radius:12px;font-size:0.7rem;color:var(--neon-blue);border:1px solid rgba(0,212,255,0.2);">🟢 Online</span>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div style="flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;min-width:200px;">
+            <div style="text-align:center;padding:20px 16px;background:rgba(255,255,255,0.03);border-radius:var(--border-radius);border:1px solid var(--glass-border);">
+              <div style="font-size:2rem;font-weight:700;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">24</div>
+              <div style="color:var(--gray-text);font-size:0.85rem;margin-top:4px;">📝 Reviews</div>
+            </div>
+            <div style="text-align:center;padding:20px 16px;background:rgba(255,255,255,0.03);border-radius:var(--border-radius);border:1px solid var(--glass-border);">
+              <div style="font-size:2rem;font-weight:700;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">12</div>
+              <div style="color:var(--gray-text);font-size:0.85rem;margin-top:4px;">🏆 Achievements</div>
+            </div>
+            <div style="text-align:center;padding:20px 16px;background:rgba(255,255,255,0.03);border-radius:var(--border-radius);border:1px solid var(--glass-border);">
+              <div style="font-size:2rem;font-weight:700;background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">8</div>
+              <div style="color:var(--gray-text);font-size:0.85rem;margin-top:4px;">⬇ Downloads</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Content Grid -->
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
+        <!-- Favorite Games -->
+        <div class="glass-panel animate-fade-up delay-1" style="text-align:left;padding:24px;">
+          <h4 style="font-family:var(--font-display);font-size:1rem;margin-bottom:16px;color:var(--neon-blue);display:flex;align-items:center;gap:8px;">
+            <span>⭐</span> Favorite Games
+          </h4>
+          <ul style="color:var(--gray-text);line-height:2.4;padding-left:0;list-style:none;">
+            <li style="display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--glass-border);padding:6px 0;">
+              <span style="color:var(--neon-blue);">▸</span> Cyberpunk 2077
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--glass-border);padding:6px 0;">
+              <span style="color:var(--neon-blue);">▸</span> God of War
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;padding:6px 0;">
+              <span style="color:var(--neon-blue);">▸</span> The Last of Us
+            </li>
+          </ul>
+        </div>
+
+        <!-- Wishlist -->
+        <div class="glass-panel animate-fade-up delay-2" style="text-align:left;padding:24px;">
+          <h4 style="font-family:var(--font-display);font-size:1rem;margin-bottom:16px;color:var(--cyan);display:flex;align-items:center;gap:8px;">
+            <span>💝</span> Wishlist
+          </h4>
+          <ul style="color:var(--gray-text);line-height:2.4;padding-left:0;list-style:none;">
+            <li style="display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--glass-border);padding:6px 0;">
+              <span style="color:var(--cyan);">▸</span> Elden Ring
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--glass-border);padding:6px 0;">
+              <span style="color:var(--cyan);">▸</span> Spider-Man 2
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;padding:6px 0;">
+              <span style="color:var(--cyan);">▸</span> Horizon 3
+            </li>
+          </ul>
+          <a href="wishlist.html" style="display:inline-block;margin-top:12px;color:var(--neon-blue);font-size:0.85rem;">View All →</a>
+        </div>
+
+        <!-- Achievements -->
+        <div class="glass-panel animate-fade-up delay-3" style="text-align:left;padding:24px;">
+          <h4 style="font-family:var(--font-display);font-size:1rem;margin-bottom:16px;color:var(--purple-glow);display:flex;align-items:center;gap:8px;">
+            <span>🏆</span> Achievements
+          </h4>
+          <ul style="color:var(--gray-text);line-height:2.4;padding-left:0;list-style:none;">
+            <li style="display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--glass-border);padding:6px 0;">
+              <span style="font-size:1.2rem;">🏅</span> First Review
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--glass-border);padding:6px 0;">
+              <span style="font-size:1.2rem;">🏅</span> 10 Reviews
+            </li>
+            <li style="display:flex;align-items:center;gap:8px;padding:6px 0;">
+              <span style="font-size:1.2rem;">🏅</span> Game Master
+            </li>
+          </ul>
+          <span style="display:inline-block;margin-top:12px;color:var(--gray-text);font-size:0.8rem;">3/20 unlocked</span>
+        </div>
+      </div>
+
+      <!-- Quick Actions -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px;">
+        <a href="bookmarks.html" class="glass-panel" style="text-align:center;padding:16px;text-decoration:none;transition:var(--transition);">
+          <div style="font-size:1.8rem;">🔖</div>
+          <div style="font-weight:600;margin-top:4px;">Bookmarks</div>
+          <div style="color:var(--gray-text);font-size:0.8rem;">5 saved</div>
+        </a>
+        <a href="wishlist.html" class="glass-panel" style="text-align:center;padding:16px;text-decoration:none;transition:var(--transition);">
+          <div style="font-size:1.8rem;">💝</div>
+          <div style="font-weight:600;margin-top:4px;">Wishlist</div>
+          <div style="color:var(--gray-text);font-size:0.8rem;">3 games</div>
+        </a>
+        <a href="reviews.html" class="glass-panel" style="text-align:center;padding:16px;text-decoration:none;transition:var(--transition);">
+          <div style="font-size:1.8rem;">⭐</div>
+          <div style="font-weight:600;margin-top:4px;">My Reviews</div>
+          <div style="color:var(--gray-text);font-size:0.8rem;">24 written</div>
+        </a>
+        <a href="downloads.html" class="glass-panel" style="text-align:center;padding:16px;text-decoration:none;transition:var(--transition);">
+          <div style="font-size:1.8rem;">⬇</div>
+          <div style="font-weight:600;margin-top:4px;">Downloads</div>
+          <div style="color:var(--gray-text);font-size:0.8rem;">8 games</div>
+        </a>
+      </div>
+
+      <!-- Edit Profile Button -->
+      <div style="text-align:center;margin-top:30px;">
+        <button class="btn-primary" style="padding:12px 48px;">✏️ Edit Profile</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+          <p>Premium gaming platform since 2026</p>
+          <div class="social-links">
+            <a href="https://github.com/shhzbali514-dotcom" target="_blank" rel="noopener noreferrer"><span>🎮</span></a>
+            <a href="https://www.linkedin.com/in/shahzaib-tahir-b6a39b426/" target="_blank" rel="noopener noreferrer"><span>⚡</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61558559640165" target="_blank" rel="noopener noreferrer"><span>📺</span></a>
+            <a href="https://www.instagram.com/shahzaibdev7/" target="_blank" rel="noopener noreferrer"><span>▶️</span></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="games.html">Games</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="news.html">News</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact</a>
+          <a href="system-requirements.html">System Req.</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="login.html">Account</a>
+        </div>
+        <div class="footer-credit">
+          <p>© 2026 Gaming Hub · crafted by <strong>Shahzaib Tahir</strong></p>
+          <p class="footer-bio">Frontend Developer · UI Animation · React</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

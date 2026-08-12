@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Categories - Gaming Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loader" class="loader-overlay">
+    <div class="loader-ring"></div>
+    <span class="loader-text">LOADING HUB</span>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particlesCanvas"></canvas>
+
+  <nav class="navbar glass-nav" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="login.html" class="btn-neon">Sign In</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px;">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>⚡ Game Categories</h2>
+        <span class="sub-label">Browse by genre</span>
+      </div>
+
+      <div class="category-grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="category-card" data-cat="action" style="padding:60px 20px;">
+          <span style="font-size:3rem;display:block;margin-bottom:12px;">⚔️</span>
+          <span>Action</span>
+          <p style="color:var(--gray-text);font-size:0.85rem;margin-top:8px;font-weight:400;-webkit-text-fill-color:var(--gray-text);">348 games</p>
+        </div>
+        <div class="category-card" data-cat="rpg" style="padding:60px 20px;">
+          <span style="font-size:3rem;display:block;margin-bottom:12px;">🧙</span>
+          <span>RPG</span>
+          <p style="color:var(--gray-text);font-size:0.85rem;margin-top:8px;font-weight:400;-webkit-text-fill-color:var(--gray-text);">256 games</p>
+        </div>
+        <div class="category-card" data-cat="shooter" style="padding:60px 20px;">
+          <span style="font-size:3rem;display:block;margin-bottom:12px;">🔫</span>
+          <span>Shooter</span>
+          <p style="color:var(--gray-text);font-size:0.85rem;margin-top:8px;font-weight:400;-webkit-text-fill-color:var(--gray-text);">412 games</p>
+        </div>
+        <div class="category-card" data-cat="sports" style="padding:60px 20px;">
+          <span style="font-size:3rem;display:block;margin-bottom:12px;">🏆</span>
+          <span>Sports</span>
+          <p style="color:var(--gray-text);font-size:0.85rem;margin-top:8px;font-weight:400;-webkit-text-fill-color:var(--gray-text);">189 games</p>
+        </div>
+        <div class="category-card" data-cat="racing" style="padding:60px 20px;">
+          <span style="font-size:3rem;display:block;margin-bottom:12px;">🏎️</span>
+          <span>Racing</span>
+          <p style="color:var(--gray-text);font-size:0.85rem;margin-top:8px;font-weight:400;-webkit-text-fill-color:var(--gray-text);">156 games</p>
+        </div>
+        <div class="category-card" data-cat="strategy" style="padding:60px 20px;">
+          <span style="font-size:3rem;display:block;margin-bottom:12px;">♟️</span>
+          <span>Strategy</span>
+          <p style="color:var(--gray-text);font-size:0.85rem;margin-top:8px;font-weight:400;-webkit-text-fill-color:var(--gray-text);">203 games</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+          <p>Premium gaming platform since 2026</p>
+          <div class="social-links">
+            <a href="https://github.com/shhzbali514-dotcom" target="_blank" rel="noopener noreferrer"><span>🎮</span></a>
+            <a href="https://www.linkedin.com/in/shahzaib-tahir-b6a39b426/" target="_blank" rel="noopener noreferrer"><span>⚡</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61558559640165" target="_blank" rel="noopener noreferrer"><span>📺</span></a>
+            <a href="https://www.instagram.com/shahzaibdev7/" target="_blank" rel="noopener noreferrer"><span>▶️</span></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="games.html">Games</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="news.html">News</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact</a>
+          <a href="system-requirements.html">System Req.</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="login.html">Account</a>
+        </div>
+        <div class="footer-credit">
+          <p>© 2026 Gaming Hub · crafted by <strong>Shahzaib Tahir</strong></p>
+          <p class="footer-bio">Frontend Developer · UI Animation · React</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

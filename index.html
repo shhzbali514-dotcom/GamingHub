@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming Hub - Premium Gaming Platform</title>
+  <meta name="description" content="Gaming Hub - The ultimate premium gaming platform with reviews, news, and downloads." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-ring"></div>
+    <span class="loader-text">LOADING HUB</span>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- PARTICLE BACKGROUND -->
+  <canvas id="particlesCanvas"></canvas>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar glass-nav" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="login.html" class="btn-neon">Sign In</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-video-bg">
+      <video autoplay muted loop playsinline id="heroVideo">
+        <source src="Play back.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-down">🔥 GAME OF THE YEAR 2026</div>
+      <h1 class="hero-title animate-fade-up">GAMING HUB</h1>
+      <p class="hero-subtitle animate-fade-up delay-1">Where legends play · premium gaming universe</p>
+      <div class="hero-search animate-fade-up delay-2">
+        <input type="text" id="heroSearchInput" placeholder="Search games, reviews, news..." />
+        <button id="heroSearchBtn">🔍</button>
+      </div>
+      <div class="hero-buttons animate-fade-up delay-3">
+        <a href="games.html" class="btn-primary">Explore Games</a>
+        <a href="reviews.html" class="btn-outline">Latest Reviews</a>
+      </div>
+    </div>
+    <div class="hero-stats animate-fade-up delay-4">
+      <div class="stat-item">
+        <span class="stat-number" data-count="2847">0</span>
+        <span class="stat-label">Games</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="1290">0</span>
+        <span class="stat-label">Reviews</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number" data-count="3.4m">0</span>
+        <span class="stat-label">Players</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRENDING SLIDER - SIRF 3 GAMES ===== -->
+  <section class="section trending">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>🔥 Trending Games</h2>
+        <a href="games.html" class="see-all">View all →</a>
+      </div>
+      <div class="slider-wrapper" id="trendingSlider">
+        <div class="slider-track" id="trendingTrack">
+        <!-- GAME 1 -->
+          <div class="game-card">
+            <div class="game-card-image">
+              <img src="CyberPunk.jpg" alt="Cyberpunk 2077" loading="lazy" />
+            </div>
+            <div class="game-card-body">
+              <h3>Cyberpunk 2077</h3>
+              <div class="game-meta">
+                <span>Trending</span>
+                <span class="rating">★ 4.5</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GAME 2 -->
+          <div class="game-card">
+            <div class="game-card-image">
+              <img src="god of war ragnarok sr 1.jpg" alt="God of War Ragnarok" loading="lazy" />
+            </div>
+            <div class="game-card-body">
+              <h3>God of War Ragnarok</h3>
+              <div class="game-meta">
+                <span>Trending</span>
+                <span class="rating">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- GAME 3 -->
+          <div class="game-card">
+            <div class="game-card-image">
+              <img src="SpiderMan 2.jpg" alt="Spider-Man 2" loading="lazy" />
+            </div>
+            <div class="game-card-body">
+              <h3>Spider-Man 2</h3>
+              <div class="game-meta">
+                <span>Trending</span>
+                <span class="rating">★ 4.9</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR GAMES ===== -->
+  <section class="section popular-grid">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>🎮 Editor's Choice</h2>
+        <span class="sub-label">curated by experts</span>
+      </div>
+      <div class="game-grid" id="popularGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="section categories">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>⚡ Categories</h2>
+      </div>
+      <div class="category-grid" id="categoryGrid">
+        <div class="category-card" data-cat="action"><span>Action</span></div>
+        <div class="category-card" data-cat="rpg"><span>RPG</span></div>
+        <div class="category-card" data-cat="shooter"><span>Shooter</span></div>
+        <div class="category-card" data-cat="sports"><span>Sports</span></div>
+        <div class="category-card" data-cat="racing"><span>Racing</span></div>
+        <div class="category-card" data-cat="strategy"><span>Strategy</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LATEST NEWS ===== -->
+  <section class="section news-preview">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>📰 Latest News</h2>
+        <a href="news.html" class="see-all">More news →</a>
+      </div>
+      <div class="news-grid" id="newsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="section newsletter">
+    <div class="container glass-panel animate-fade-up">
+      <h2>🚀 Join the Hub</h2>
+      <p>Subscribe for exclusive news, giveaways &amp; early access</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Your email address" />
+        <button class="btn-primary">Subscribe</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+          <p>Premium gaming platform since 2026</p>
+          <div class="social-links">
+            <a href="https://github.com/shhzbali514-dotcom" target="_blank" rel="noopener noreferrer"><span>🎮</span></a>
+            <a href="https://www.linkedin.com/in/shahzaib-tahir-b6a39b426/" target="_blank" rel="noopener noreferrer"><span>⚡</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61558559640165" target="_blank" rel="noopener noreferrer"><span>📺</span></a>
+            <a href="https://www.instagram.com/shahzaibdev7/" target="_blank" rel="noopener noreferrer"><span>▶️</span></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="games.html">Games</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="news.html">News</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact</a>
+          <a href="system-requirements.html">System Req.</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="login.html">Account</a>
+        </div>
+        <div class="footer-credit">
+          <p>© 2026 Gaming Hub · crafted by <strong>Shahzaib Tahir</strong></p>
+          <p class="footer-bio">Frontend Developer · UI Animation · React</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== AUTOMATIC SLIDER JAVASCRIPT (Sirf 3 Games) ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      const track = document.getElementById('trendingTrack');
+      if (!track) return;
+      
+      const cards = track.querySelectorAll('.game-card');
+      const totalCards = cards.length; // Sirf 3 games
+      let currentIndex = 0;
+      let autoSlideInterval = null;
+      let isTransitioning = false;
+      
+      // Get card width with gap
+      function getCardWidth() {
+        return cards[0].offsetWidth + 24;
+      }
+      
+      // Update slider position
+      function updateSlider(animate = true) {
+        const cardWidth = getCardWidth();
+        if (animate) {
+          track.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        } else {
+          track.style.transition = 'none';
+        }
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      }
+      
+      // Next slide - infinite loop with 3 games
+      function nextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        const cardWidth = getCardWidth();
+        const visibleCards = Math.floor(track.parentElement.offsetWidth / cardWidth);
+        const maxIndex = totalCards - visibleCards;
+        
+        currentIndex++;
+        
+        // If reached end, go back to start
+        if (currentIndex > maxIndex) {
+          track.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          track.style.transform = `translateX(-${maxIndex * cardWidth}px)`;
+          
+          setTimeout(function() {
+            track.style.transition = 'none';
+            currentIndex = 0;
+            track.style.transform = `translateX(0px)`;
+            track.offsetHeight;
+            setTimeout(function() {
+              track.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+              isTransitioning = false;
+            }, 50);
+          }, 800);
+          
+        } else {
+          updateSlider(true);
+          setTimeout(function() {
+            isTransitioning = false;
+          }, 800);
+        }
+      }
+      
+      // Start auto-slide
+      function startAutoSlide() {
+        stopAutoSlide();
+        autoSlideInterval = setInterval(function() {
+          nextSlide();
+        }, 3500);
+      }
+      
+      function stopAutoSlide() {
+        if (autoSlideInterval) {
+          clearInterval(autoSlideInterval);
+          autoSlideInterval = null;
+        }
+      }
+      
+      // Pause on hover
+      const sliderWrapper = document.querySelector('.slider-wrapper');
+      if (sliderWrapper) {
+        sliderWrapper.addEventListener('mouseenter', function() {
+          stopAutoSlide();
+        });
+        sliderWrapper.addEventListener('mouseleave', function() {
+          startAutoSlide();
+        });
+      }
+      
+      // Handle window resize
+      let resizeTimeout;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(function() {
+          updateSlider(false);
+        }, 200);
+      });
+      
+      // Start the slider
+      setTimeout(function() {
+        updateSlider(false);
+        startAutoSlide();
+      }, 500);
+      
+    });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>

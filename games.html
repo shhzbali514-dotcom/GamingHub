@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games - Gaming Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loader" class="loader-overlay">
+    <div class="loader-ring"></div>
+    <span class="loader-text">LOADING HUB</span>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particlesCanvas"></canvas>
+
+  <nav class="navbar glass-nav" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html" class="active">Games</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="login.html" class="btn-neon">Sign In</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px;">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>🎮 All Games</h2>
+        <span id="gameCount" class="sub-label">Discover your next adventure</span>
+      </div>
+
+      <!-- Search & Filter -->
+      <div class="animate-fade-up delay-1" style="margin-bottom:40px;">
+        <div class="hero-search" style="max-width:100%;">
+          <input type="text" id="gamesSearchInput" placeholder="Search games by title, genre..." />
+          <button id="gamesSearchBtn">🔍</button>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+          <select id="genreFilter" style="padding:10px 20px;background:var(--dark-gray);border:1px solid var(--glass-border);border-radius:30px;color:var(--white);font-family:var(--font-primary);cursor:pointer;">
+            <option value="all">All Genres</option>
+            <option value="Action">Action</option>
+            <option value="RPG">RPG</option>
+            <option value="Shooter">Shooter</option>
+            <option value="Adventure">Adventure</option>
+          </select>
+          <select id="platformFilter" style="padding:10px 20px;background:var(--dark-gray);border:1px solid var(--glass-border);border-radius:30px;color:var(--white);font-family:var(--font-primary);cursor:pointer;">
+            <option value="all">All Platforms</option>
+            <option value="PC">PC</option>
+            <option value="PS5">PlayStation</option>
+            <option value="Xbox">Xbox</option>
+          </select>
+          <select id="ratingFilter" style="padding:10px 20px;background:var(--dark-gray);border:1px solid var(--glass-border);border-radius:30px;color:var(--white);font-family:var(--font-primary);cursor:pointer;">
+            <option value="all">All Ratings</option>
+            <option value="4.5">★ 4.5+</option>
+            <option value="4.0">★ 4.0+</option>
+            <option value="3.5">★ 3.5+</option>
+          </select>
+          <button id="applyFiltersBtn" class="btn-primary" style="padding:10px 28px;font-size:0.85rem;">Apply Filters</button>
+          <button id="resetFiltersBtn" class="btn-outline" style="padding:10px 28px;font-size:0.85rem;">Reset</button>
+        </div>
+      </div>
+
+      <!-- Game Grid -->
+      <div class="game-grid" id="gamesGrid"></div>
+
+      <!-- No Results Message -->
+      <div id="noResults" style="display:none;text-align:center;padding:60px 20px;color:var(--text-muted);">
+        <div style="font-size:3rem;margin-bottom:16px;">🔍</div>
+        <h3 style="font-family:var(--font-display);color:var(--white);">No Games Found</h3>
+        <p>Try adjusting your search or filters</p>
+      </div>
+
+      <!-- Load More -->
+      <div style="text-align:center;margin-top:40px;">
+        <button id="loadMoreBtn" class="btn-outline">Load More Games</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+          <p>Premium gaming platform since 2026</p>
+          <div class="social-links">
+            <a href="https://github.com/shhzbali514-dotcom" target="_blank" rel="noopener noreferrer"><span>🎮</span></a>
+            <a href="https://www.linkedin.com/in/shahzaib-tahir-b6a39b426/" target="_blank" rel="noopener noreferrer"><span>⚡</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61558559640165" target="_blank" rel="noopener noreferrer"><span>📺</span></a>
+            <a href="https://www.instagram.com/shahzaibdev7/" target="_blank" rel="noopener noreferrer"><span>▶️</span></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="games.html">Games</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="news.html">News</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact</a>
+          <a href="system-requirements.html">System Req.</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="login.html">Account</a>
+        </div>
+        <div class="footer-credit">
+          <p>© 2026 Gaming Hub · crafted by <strong>Shahzaib Tahir</strong></p>
+          <p class="footer-bio">Frontend Developer · UI Animation · React</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // ============================================================
+      // GAME DATABASE
+      // ============================================================
+      const allGames = [
+        {
+          title: 'Cyberpunk 2077',
+          genre: 'RPG',
+          rating: 4.5,
+          platform: 'PC, PS5, Xbox',
+          image: 'CyberPunk.jpg',
+          badge: '🔥 Hot'
+        },
+        {
+          title: 'God of War',
+          genre: 'Action',
+          rating: 4.8,
+          platform: 'PS4, PS5, PC',
+          image: 'god of war.jpg',
+          badge: '⭐ Editor\'s Choice'
+        },
+        {
+          title: 'The Last of Us',
+          genre: 'Adventure',
+          rating: 4.9,
+          platform: 'PS3, PS4, PS5, PC',
+          image: 'LAst OF uS.jpg',
+          badge: '🏆 Game of the Year'
+        },
+        {
+          title: 'Halo Infinite',
+          genre: 'Shooter',
+          rating: 4.2,
+          platform: 'PC, Xbox',
+          image: 'halo infinite.jpg',
+          badge: '🎯 Top Rated'
+        },
+        {
+          title: 'Elden Ring',
+          genre: 'RPG',
+          rating: 4.7,
+          platform: 'PC, PS4, PS5, Xbox',
+          image: 'elden ring.jpg',
+          badge: '🌟 Must Play'
+        },
+        {
+          title: 'God of War Ragnarok',
+          genre: 'Action',
+          rating: 4.9,
+          platform: 'PS4, PS5',
+          image: 'god of war ragnarok sr 1.jpg',
+          badge: '💎 Masterpiece'
+        },
+        {
+          title: 'Spider-Man 2',
+          genre: 'Action',
+          rating: 4.9,
+          platform: 'PS5',
+          image: 'SpiderMan 2.jpg',
+          badge: '🕷️ Amazing'
+        },
+        {
+          title: 'Horizon Forbidden West',
+          genre: 'Adventure',
+          rating: 4.6,
+          platform: 'PS4, PS5, PC',
+          image: 'Horizon Forbidden West.jpg',
+          badge: '🌿 Beautiful'
+        }
+      ];
+
+      // ============================================================
+      // DOM ELEMENTS
+      // ============================================================
+      const grid = document.getElementById('gamesGrid');
+      const searchInput = document.getElementById('gamesSearchInput');
+      const searchBtn = document.getElementById('gamesSearchBtn');
+      const genreFilter = document.getElementById('genreFilter');
+      const platformFilter = document.getElementById('platformFilter');
+      const ratingFilter = document.getElementById('ratingFilter');
+      const applyBtn = document.getElementById('applyFiltersBtn');
+      const resetBtn = document.getElementById('resetFiltersBtn');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      const noResults = document.getElementById('noResults');
+      const gameCount = document.getElementById('gameCount');
+
+      let currentGames = [...allGames];
+      let visibleCount = 6;
+      const loadMoreCount = 4;
+
+      // ============================================================
+      // RENDER GAMES
+      // ============================================================
+      function renderGames(gamesToShow) {
+        grid.innerHTML = '';
+
+        if (gamesToShow.length === 0) {
+          noResults.style.display = 'block';
+          gameCount.textContent = '0 games found';
+          loadMoreBtn.style.display = 'none';
+          return;
+        }
+
+        noResults.style.display = 'none';
+        gameCount.textContent = gamesToShow.length + ' games found';
+
+        const displayGames = gamesToShow.slice(0, visibleCount);
+
+        displayGames.forEach(function(game) {
+          const card = document.createElement('div');
+          card.className = 'game-card card-hover-lift';
+
+          card.innerHTML = `
+            <div class="game-card-image">
+              <img src="${game.image}" alt="${game.title}" loading="lazy" onerror="this.src='https://placehold.co/400x225/14182b/7c6dd4?text=${encodeURIComponent(game.title)}'" />
+              <span class="game-card-badge">${game.badge}</span>
+            </div>
+            <div class="game-card-body">
+              <h3>${game.title}</h3>
+              <div class="game-meta">
+                <span>${game.genre}</span>
+                <span class="rating">★ ${game.rating}</span>
+              </div>
+              <div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">${game.platform}</div>
+            </div>
+          `;
+
+          card.addEventListener('click', function() {
+            const title = this.querySelector('h3').textContent;
+            window.location.href = `game.html?title=${encodeURIComponent(title)}`;
+          });
+
+          grid.appendChild(card);
+        });
+
+        // Load more button
+        if (visibleCount < gamesToShow.length) {
+          loadMoreBtn.style.display = 'inline-block';
+        } else {
+          loadMoreBtn.style.display = 'none';
+        }
+      }
+
+      // ============================================================
+      // FILTER GAMES
+      // ============================================================
+      function filterGames() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const genre = genreFilter.value;
+        const platform = platformFilter.value;
+        const rating = parseFloat(ratingFilter.value);
+
+        let filtered = allGames.filter(function(game) {
+          // Search
+          if (searchTerm && !game.title.toLowerCase().includes(searchTerm) && 
+              !game.genre.toLowerCase().includes(searchTerm)) {
+            return false;
+          }
+
+          // Genre
+          if (genre !== 'all' && game.genre !== genre) {
+            return false;
+          }
+
+          // Platform
+          if (platform !== 'all' && !game.platform.toLowerCase().includes(platform.toLowerCase())) {
+            return false;
+          }
+
+          // Rating
+          if (rating && game.rating < rating) {
+            return false;
+          }
+
+          return true;
+        });
+
+        currentGames = filtered;
+        visibleCount = 6;
+        renderGames(currentGames);
+      }
+
+      // ============================================================
+      // RESET FILTERS
+      // ============================================================
+      function resetFilters() {
+        searchInput.value = '';
+        genreFilter.value = 'all';
+        platformFilter.value = 'all';
+        ratingFilter.value = 'all';
+        currentGames = [...allGames];
+        visibleCount = 6;
+        renderGames(currentGames);
+      }
+
+      // ============================================================
+      // LOAD MORE
+      // ============================================================
+      loadMoreBtn.addEventListener('click', function() {
+        visibleCount += loadMoreCount;
+        renderGames(currentGames);
+      });
+
+      // ============================================================
+      // EVENT LISTENERS
+      // ============================================================
+      searchBtn.addEventListener('click', filterGames);
+      applyBtn.addEventListener('click', filterGames);
+      resetBtn.addEventListener('click', resetFilters);
+
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          filterGames();
+        }
+      });
+
+      // ============================================================
+      // INITIAL RENDER
+      // ============================================================
+      renderGames(allGames);
+
+      // ============================================================
+      // SEARCH FROM URL PARAMETER (if coming from home page search)
+      // ============================================================
+      const urlParams = new URLSearchParams(window.location.search);
+      const searchQuery = urlParams.get('search');
+      if (searchQuery) {
+        searchInput.value = decodeURIComponent(searchQuery);
+        filterGames();
+      }
+
+    });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>

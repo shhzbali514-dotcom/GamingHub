@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Details - Gaming Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loader" class="loader-overlay">
+    <div class="loader-ring"></div>
+    <span class="loader-text">LOADING HUB</span>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particlesCanvas"></canvas>
+
+  <nav class="navbar glass-nav" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html" class="active">Games</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="login.html" class="btn-neon">Sign In</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px;">
+    <div class="container">
+
+      <!-- ===== GAME HEADER ===== -->
+      <div class="glass-panel animate-fade-up" style="text-align:left;padding:40px;">
+        <div style="display:grid;grid-template-columns:1fr 2fr;gap:40px;align-items:start;">
+          <!-- Cover Image -->
+          <div>
+            <img id="gameCoverImage" src="https://placehold.co/600x800/1a1a2e/00d4ff?text=Game" alt="Game Cover" style="border-radius:var(--border-radius);width:100%;" />
+            <div style="display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;">
+              <a id="downloadLink" href="downloads.html" class="btn-primary" style="flex:1;text-align:center;padding:12px 20px;font-size:0.85rem;">⬇ Download</a>
+              <a href="#" class="btn-outline" style="flex:1;text-align:center;padding:12px 20px;font-size:0.85rem;">🌐 Official Website</a>
+            </div>
+          </div>
+
+          <!-- Game Info -->
+          <div>
+            <h1 id="gameTitle" style="font-family:var(--font-display);font-size:2.5rem;">Cyberpunk 2077</h1>
+            <div style="display:flex;gap:20px;flex-wrap:wrap;margin:12px 0;">
+              <span id="gameRating" style="color:var(--text-secondary);">⭐ 4.5/5</span>
+              <span id="gameGenre" style="color:var(--text-secondary);">🎮 RPG</span>
+              <span id="gameYear" style="color:var(--text-secondary);">📅 2020</span>
+              <span id="gameDeveloper" style="color:var(--text-secondary);">🏢 CD Projekt Red</span>
+            </div>
+            <p id="gameDescription" style="color:var(--text-secondary);font-size:1.05rem;line-height:1.8;margin:16px 0;">
+              Cyberpunk 2077 is an open-world, action-adventure RPG set in the dystopian Night City.
+            </p>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;">
+              <div id="gameDeveloperFull"><strong>Developer:</strong> <span style="color:var(--text-secondary);">CD Projekt Red</span></div>
+              <div id="gamePublisher"><strong>Publisher:</strong> <span style="color:var(--text-secondary);">CD Projekt Red</span></div>
+              <div id="gameReleaseDate"><strong>Release Date:</strong> <span style="color:var(--text-secondary);">December 10, 2020</span></div>
+              <div id="gamePlatforms"><strong>Platforms:</strong> <span style="color:var(--text-secondary);">PC, PS5, Xbox Series X</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SYSTEM REQUIREMENTS ===== -->
+      <div class="animate-fade-up delay-1" style="margin-top:40px;">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:20px;">⚙️ System Requirements</h3>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+          <div class="glass-panel" style="padding:24px;text-align:left;">
+            <h4 style="color:var(--purple);margin-bottom:12px;">Minimum</h4>
+            <ul id="minReqs" style="color:var(--text-secondary);font-size:0.9rem;line-height:2;">
+              <li>OS: Windows 7/10</li>
+              <li>CPU: Intel i5-3570K</li>
+              <li>RAM: 8 GB</li>
+              <li>GPU: GTX 780</li>
+              <li>Storage: 70 GB</li>
+            </ul>
+          </div>
+          <div class="glass-panel" style="padding:24px;text-align:left;border-color:rgba(124,109,212,0.15);">
+            <h4 style="color:var(--blue);margin-bottom:12px;">Recommended</h4>
+            <ul id="recReqs" style="color:var(--text-secondary);font-size:0.9rem;line-height:2;">
+              <li>OS: Windows 10</li>
+              <li>CPU: Intel i7-4790</li>
+              <li>RAM: 16 GB</li>
+              <li>GPU: GTX 1060</li>
+              <li>Storage: 70 GB SSD</li>
+            </ul>
+          </div>
+          <div class="glass-panel" style="padding:24px;text-align:left;border-color:rgba(232,112,122,0.15);">
+            <h4 style="color:var(--coral);margin-bottom:12px;">Ultra</h4>
+            <ul id="ultraReqs" style="color:var(--text-secondary);font-size:0.9rem;line-height:2;">
+              <li>OS: Windows 11</li>
+              <li>CPU: Intel i9-9900K</li>
+              <li>RAM: 32 GB</li>
+              <li>GPU: RTX 3080</li>
+              <li>Storage: 70 GB NVMe</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SCREENSHOTS - DYNAMIC ===== -->
+      <div class="animate-fade-up delay-2" style="margin-top:40px;">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;margin-bottom:20px;">📸 Screenshots</h3>
+        <div id="screenshotContainer" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+          <!-- Screenshots will be injected by JavaScript -->
+        </div>
+      </div>
+
+      <!-- ===== PROS & CONS ===== -->
+      <div class="animate-fade-up delay-3" style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+        <div class="glass-panel" style="padding:24px;text-align:left;border-color:rgba(0,212,255,0.08);">
+          <h4 style="color:#00c853;font-size:1.2rem;">✅ Pros</h4>
+          <ul id="prosList" style="color:var(--text-secondary);line-height:2.2;margin-top:12px;">
+            <li>✓ Stunning visuals and atmosphere</li>
+            <li>✓ Deep RPG mechanics</li>
+            <li>✓ Engaging story</li>
+            <li>✓ Massive open world</li>
+          </ul>
+        </div>
+        <div class="glass-panel" style="padding:24px;text-align:left;border-color:rgba(255,0,0,0.08);">
+          <h4 style="color:#ff4444;font-size:1.2rem;">❌ Cons</h4>
+          <ul id="consList" style="color:var(--text-secondary);line-height:2.2;margin-top:12px;">
+            <li>✗ Bugs at launch</li>
+            <li>✗ Performance issues</li>
+            <li>✗ Cut content</li>
+            <li>✗ AI limitations</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+          <p>Premium gaming platform since 2026</p>
+          <div class="social-links">
+    <a href="https://github.com/shhzbali514-dotcom" target="_blank" rel="noopener noreferrer"><span>🎮</span></a>
+    <a href="https://www.linkedin.com/in/shahzaib-tahir-b6a39b426/" target="_blank" rel="noopener noreferrer"><span>⚡</span></a>
+    <a href="https://www.facebook.com/profile.php?id=61558559640165" target="_blank" rel="noopener noreferrer"><span>📺</span></a>
+    <a href="https://www.instagram.com/shahzaibdev7/" target="_blank" rel="noopener noreferrer"><span>▶️</span></a>
+</div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="games.html">Games</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="news.html">News</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact</a>
+          <a href="system-requirements.html">System Req.</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="login.html">Account</a>
+        </div>
+        <div class="footer-credit">
+          <p>© 2026 Gaming Hub · crafted by <strong>Shahzaib Tahir</strong></p>
+          <p class="footer-bio">Frontend Developer · UI Animation · React</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== DYNAMIC JAVASCRIPT ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      // ============================================================
+      // GAME DATABASE 
+      // ============================================================
+         const gameData = {
+
+        // 1. CYBERPUNK 2077
+        'Cyberpunk 2077': {
+          title: 'Cyberpunk 2077',
+          genre: 'RPG',
+          rating: '4.5/5',
+          year: '2020',
+          developer: 'CD Projekt Red',
+          publisher: 'CD Projekt Red',
+          releaseDate: 'December 10, 2020',
+          platforms: 'PC, PS5, Xbox Series X',
+          description: 'Cyberpunk 2077 is an open-world, action-adventure RPG set in the dystopian Night City.',
+          image: 'CyberPunk.jpg',
+          screenshots: ['cP screenshot 1.jpg', 'cP screenshot 2.jpg', 'cP screenshot 34.jpg'],
+          pros: ['Stunning visuals', 'Deep RPG mechanics', 'Engaging story', 'Massive open world'],
+          cons: ['Bugs at launch', 'Performance issues', 'Cut content', 'AI limitations'],
+          minReqs: ['OS: Windows 7/10', 'CPU: Intel i5-3570K', 'RAM: 8 GB', 'GPU: GTX 780', 'Storage: 70 GB'],
+          recReqs: ['OS: Windows 10', 'CPU: Intel i7-4790', 'RAM: 16 GB', 'GPU: GTX 1060', 'Storage: 70 GB SSD'],
+          ultraReqs: ['OS: Windows 11', 'CPU: Intel i9-9900K', 'RAM: 32 GB', 'GPU: RTX 3080', 'Storage: 70 GB NVMe']
+        },
+
+        // 2. GOD OF WAR
+        'God of War': {
+          title: 'God of War',
+          genre: 'Action',
+          rating: '4.8/5',
+          year: '2018',
+          developer: 'Santa Monica Studio',
+          publisher: 'Sony Interactive Entertainment',
+          releaseDate: 'April 20, 2018',
+          platforms: 'PS4, PS5, PC',
+          description: 'God of War follows Kratos and his son Atreus on a journey through the Norse realms.',
+          image: 'God of War more.jpg',
+          screenshots: ['god of war sr1.jpg', 'god of war sc2.jpg', 'god of war sr3.jpg'],
+          pros: ['Brilliant combat', 'Emotional story', 'Stunning visuals', 'Great voice acting'],
+          cons: ['Repetitive puzzles', 'Limited enemy variety', 'Camera issues'],
+          minReqs: ['OS: Windows 10', 'CPU: Intel i5-2500K', 'RAM: 8 GB', 'GPU: GTX 960', 'Storage: 70 GB'],
+          recReqs: ['OS: Windows 10', 'CPU: Intel i7-4770K', 'RAM: 16 GB', 'GPU: GTX 1060', 'Storage: 70 GB SSD'],
+          ultraReqs: ['OS: Windows 11', 'CPU: Intel i9-9900K', 'RAM: 32 GB', 'GPU: RTX 3080', 'Storage: 70 GB NVMe']
+        },
+
+        // 3. THE LAST OF US
+        'The Last of Us': {
+          title: 'The Last of Us',
+          genre: 'Adventure',
+          rating: '4.9/5',
+          year: '2013',
+          developer: 'Naughty Dog',
+          publisher: 'Sony Interactive Entertainment',
+          releaseDate: 'June 14, 2013',
+          platforms: 'PS3, PS4, PS5, PC',
+          description: 'The Last of Us follows Joel and Ellie on a journey across post-apocalyptic America.',
+          image: 'The last of us more.jpg',
+          screenshots: ['last of us sr1.jpg', 'last of us sr2.jpg', 'last of us sr3.jpg'],
+          pros: ['Masterpiece storytelling', 'Great characters', 'Atmospheric world', 'Tense gameplay'],
+          cons: ['Linear design', 'Limited replayability', 'Frustrating stealth'],
+          minReqs: ['OS: Windows 10', 'CPU: Intel i5-2500K', 'RAM: 8 GB', 'GPU: GTX 970', 'Storage: 100 GB'],
+          recReqs: ['OS: Windows 10', 'CPU: Intel i7-4770K', 'RAM: 16 GB', 'GPU: GTX 1060', 'Storage: 100 GB SSD'],
+          ultraReqs: ['OS: Windows 11', 'CPU: Intel i9-9900K', 'RAM: 32 GB', 'GPU: RTX 3080', 'Storage: 100 GB NVMe']
+        },
+
+        // 4. HALO INFINITE
+        'Halo Infinite': {
+          title: 'Halo Infinite',
+          genre: 'Shooter',
+          rating: '4.2/5',
+          year: '2021',
+          developer: '343 Industries',
+          publisher: 'Xbox Game Studios',
+          releaseDate: 'December 8, 2021',
+          platforms: 'PC, Xbox One, Xbox Series X/S',
+          description: 'Halo Infinite continues the story of Master Chief with semi-open world gameplay.',
+          image: 'halo infinite more.jpg',
+          screenshots: ['halo in sr1.jpg', 'halo in sr2.jpg', 'halo insr3.jpg'],
+          pros: ['Excellent gameplay', 'Great multiplayer', 'Open world', 'Classic Halo feel'],
+          cons: ['Short campaign', 'Repetitive missions', 'Lack of content'],
+          minReqs: ['OS: Windows 10', 'CPU: Intel i5-4440', 'RAM: 8 GB', 'GPU: GTX 1050', 'Storage: 50 GB'],
+          recReqs: ['OS: Windows 10', 'CPU: Intel i7-8700K', 'RAM: 16 GB', 'GPU: GTX 1060', 'Storage: 50 GB SSD'],
+          ultraReqs: ['OS: Windows 11', 'CPU: Intel i9-9900K', 'RAM: 32 GB', 'GPU: RTX 3080', 'Storage: 50 GB NVMe']
+        },
+
+        // 5. ELDEN RING
+        'Elden Ring': {
+          title: 'Elden Ring',
+          genre: 'RPG',
+          rating: '4.7/5',
+          year: '2022',
+          developer: 'FromSoftware',
+          publisher: 'Bandai Namco',
+          releaseDate: 'February 25, 2022',
+          platforms: 'PC, PS4, PS5, Xbox One, Xbox Series X/S',
+          description: 'Elden Ring is an action RPG set in the Lands Between with challenging combat.',
+          image: 'Elden Ring.jpg',
+          screenshots: ['er sr 1.jpg', 'er sr 2.jpg', 'er sr 3.jpg'],
+          pros: ['Massive open world', 'Challenging combat', 'Deep lore', 'Stunning art'],
+          cons: ['Difficulty spikes', 'Performance issues', 'PvP balancing'],
+          minReqs: ['OS: Windows 10', 'CPU: Intel i5-8400', 'RAM: 12 GB', 'GPU: GTX 1060', 'Storage: 60 GB'],
+          recReqs: ['OS: Windows 11', 'CPU: Intel i7-8700K', 'RAM: 16 GB', 'GPU: GTX 1070', 'Storage: 60 GB SSD'],
+          ultraReqs: ['OS: Windows 11', 'CPU: Intel i9-9900K', 'RAM: 32 GB', 'GPU: RTX 3080', 'Storage: 60 GB NVMe']
+        },
+
+        // 6. GOD OF WAR RAGNAROK
+        'God of War Ragnarok': {
+          title: 'God of War Ragnarok',
+          genre: 'Action',
+          rating: '4.9/5',
+          year: '2022',
+          developer: 'Santa Monica Studio',
+          publisher: 'Sony Interactive Entertainment',
+          releaseDate: 'November 9, 2022',
+          platforms: 'PS4, PS5',
+          description: 'God of War Ragnarok is the epic sequel to the 2018 God of War.',
+          image: 'god of war ragnarok 2.jpg',
+          screenshots: ['god of war ragnarok sr 1.jpg', 'god of war ragnarok sr 2.jpg', 'god of war ragnarok sr 3.jpg'],
+          pros: ['Epic story', 'Improved combat', 'Stunning visuals', 'Great characters'],
+          cons: ['Pacing issues', 'Repetitive side quests'],
+          minReqs: ['OS: Windows 10', 'CPU: Intel i5-2500K', 'RAM: 8 GB', 'GPU: GTX 960', 'Storage: 90 GB'],
+          recReqs: ['OS: Windows 10', 'CPU: Intel i7-4770K', 'RAM: 16 GB', 'GPU: GTX 1060', 'Storage: 90 GB SSD'],
+          ultraReqs: ['OS: Windows 11', 'CPU: Intel i9-9900K', 'RAM: 32 GB', 'GPU: RTX 3080', 'Storage: 90 GB NVMe']
+        },
+
+        // 7. SPIDER-MAN 2
+        'Spider-Man 2': {
+          title: 'Spider-Man 2',
+          genre: 'Action',
+          rating: '4.9/5',
+          year: '2023',
+          developer: 'Insomniac Games',
+          publisher: 'Sony Interactive Entertainment',
+          releaseDate: 'October 20, 2023',
+          platforms: 'PS5',
+          description: 'Spider-Man 2 features both Peter Parker and Miles Morales in New York City.',
+          image: 'SpiderMan 2.jpg',
+          screenshots: ['sm sr 1.jpg', 'sm sr 2.jpg', 'sm sr 3.jpg'],
+          pros: ['Excellent web-swinging', 'Great combat', 'Dual protagonists', 'Stunning graphics'],
+          cons: ['Short campaign', 'Some bugs'],
+          minReqs: ['OS: Windows 10', 'CPU: Intel i5-4440', 'RAM: 8 GB', 'GPU: GTX 1060', 'Storage: 80 GB'],
+          recReqs: ['OS: Windows 11', 'CPU: Intel i7-8700K', 'RAM: 16 GB', 'GPU: GTX 1070', 'Storage: 80 GB SSD'],
+          ultraReqs: ['OS: Windows 11', 'CPU: Intel i9-9900K', 'RAM: 32 GB', 'GPU: RTX 3080', 'Storage: 80 GB NVMe']
+        },
+
+        // 8. HORIZON FORBIDDEN WEST 
+        'Horizon Forbidden West': {
+          title: 'Horizon Forbidden West',
+          genre: 'Action RPG',
+          rating: '4.9/5',
+          year: '2022',
+          developer: 'Guerrilla Games',
+          publisher: 'Sony Interactive Entertainment',
+          releaseDate: 'February 18, 2022',
+          platforms: 'PS5, PS4',
+          description: 'Horizon Forbidden West is an action RPG where Aloy journeys across the mysterious Forbidden West to uncover hidden secrets, battle massive machines, and save the world from a deadly threat.',
+          image: 'Horizon Forbidden West.jpg',
+          screenshots: ['hfw sr1.jpg', 'hfw sr2.jpg', 'hfw sr3.jpg'],
+          pros: ['Beautiful open world', 'Excellent combat system', 'Outstanding graphics', 'Engaging story'],
+          cons: ['Large install size', 'Some repetitive side quests'],
+          minReqs: ['OS: Windows 10 64-bit', 'CPU: Intel Core i5-8600 / AMD Ryzen 5 3600', 'RAM: 16 GB', 'GPU: NVIDIA GTX 1650 4GB / AMD RX 5500 XT 4GB', 'Storage: 150 GB SSD'],
+          recReqs: ['OS: Windows 11 64-bit', 'CPU: Intel Core i7-9700 / AMD Ryzen 7 3700X', 'RAM: 16 GB', 'GPU: NVIDIA RTX 3060 / AMD RX 5700', 'Storage: 150 GB SSD'],
+          ultraReqs: ['OS: Windows 11 64-bit', 'CPU: Intel Core i9-12900K / AMD Ryzen 9 5900X', 'RAM: 32 GB', 'GPU: NVIDIA RTX 4080 / AMD RX 7900 XTX', 'Storage: 150 GB NVMe SSD']
+        }
+      }; 
+
+      // ============================================================
+      // GET GAME FROM URL
+      // ============================================================
+      const urlParams = new URLSearchParams(window.location.search);
+      let gameTitle = urlParams.get('title');
+
+      if (gameTitle) {
+        gameTitle = decodeURIComponent(gameTitle);
+      }
+
+      const game = gameData[gameTitle] || gameData['Cyberpunk 2077'];
+
+      // ============================================================
+      // UPDATE PAGE WITH GAME DATA
+      // ============================================================
+
+      // Update Title
+      document.title = game.title + ' - Gaming Hub';
+
+      // Update Cover Image
+      const coverImage = document.getElementById('gameCoverImage');
+      if (coverImage) {
+        coverImage.src = game.image;
+        coverImage.alt = game.title;
+      }
+
+      // Update Game Title
+      const titleEl = document.getElementById('gameTitle');
+      if (titleEl) titleEl.textContent = game.title;
+
+      // Update Rating
+      const ratingEl = document.getElementById('gameRating');
+      if (ratingEl) ratingEl.textContent = '⭐ ' + game.rating;
+
+      // Update Genre
+      const genreEl = document.getElementById('gameGenre');
+      if (genreEl) genreEl.textContent = '🎮 ' + game.genre;
+
+      // Update Year
+      const yearEl = document.getElementById('gameYear');
+      if (yearEl) yearEl.textContent = '📅 ' + game.year;
+
+      // Update Developer
+      const developerEl = document.getElementById('gameDeveloper');
+      if (developerEl) developerEl.textContent = '🏢 ' + game.developer;
+
+      // Update Description
+      const descEl = document.getElementById('gameDescription');
+      if (descEl) descEl.textContent = game.description;
+
+      // Update Developer Full
+      const devFullEl = document.getElementById('gameDeveloperFull');
+      if (devFullEl) devFullEl.innerHTML = '<strong>Developer:</strong> <span style="color:var(--text-secondary);">' + game.developer + '</span>';
+
+      // Update Publisher
+      const pubEl = document.getElementById('gamePublisher');
+      if (pubEl) pubEl.innerHTML = '<strong>Publisher:</strong> <span style="color:var(--text-secondary);">' + game.publisher + '</span>';
+
+      // Update Release Date
+      const releaseEl = document.getElementById('gameReleaseDate');
+      if (releaseEl) releaseEl.innerHTML = '<strong>Release Date:</strong> <span style="color:var(--text-secondary);">' + game.releaseDate + '</span>';
+
+      // Update Platforms
+      const platformEl = document.getElementById('gamePlatforms');
+      if (platformEl) platformEl.innerHTML = '<strong>Platforms:</strong> <span style="color:var(--text-secondary);">' + game.platforms + '</span>';
+
+      // Update Pros
+      const prosList = document.getElementById('prosList');
+      if (prosList) {
+        prosList.innerHTML = game.pros.map(function(p) {
+          return '<li>✓ ' + p + '</li>';
+        }).join('');
+      }
+
+      // Update Cons
+      const consList = document.getElementById('consList');
+      if (consList) {
+        consList.innerHTML = game.cons.map(function(c) {
+          return '<li>✗ ' + c + '</li>';
+        }).join('');
+      }
+
+      // Update Minimum Requirements
+      const minReqs = document.getElementById('minReqs');
+      if (minReqs) {
+        minReqs.innerHTML = game.minReqs.map(function(r) {
+          return '<li>' + r + '</li>';
+        }).join('');
+      }
+
+      // Update Recommended Requirements
+      const recReqs = document.getElementById('recReqs');
+      if (recReqs) {
+        recReqs.innerHTML = game.recReqs.map(function(r) {
+          return '<li>' + r + '</li>';
+        }).join('');
+      }
+
+      // Update Ultra Requirements
+      const ultraReqs = document.getElementById('ultraReqs');
+      if (ultraReqs) {
+        ultraReqs.innerHTML = game.ultraReqs.map(function(r) {
+          return '<li>' + r + '</li>';
+        }).join('');
+      }
+
+      
+      const screenshotContainer = document.getElementById('screenshotContainer');
+      if (screenshotContainer && game.screenshots) {
+        screenshotContainer.innerHTML = '';
+        game.screenshots.forEach(function(screenshot) {
+          const img = document.createElement('img');
+          img.src = screenshot;
+          img.alt = game.title + ' Screenshot';
+          img.loading = 'lazy';
+          img.style.cssText = 'border-radius:var(--border-radius);width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border:1px solid var(--card-border);transition:var(--transition);cursor:pointer;';
+          img.addEventListener('click', function() {
+            // Open full size in new tab
+            window.open(this.src, '_blank');
+          });
+          img.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.03)';
+            this.style.borderColor = 'rgba(124,109,212,0.3)';
+            this.style.boxShadow = '0 8px 30px rgba(0,0,0,0.4)';
+          });
+          img.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.borderColor = 'var(--card-border)';
+            this.style.boxShadow = 'none';
+          });
+          screenshotContainer.appendChild(img);
+        });
+      }
+
+    
+      const downloadLink = document.getElementById('downloadLink');
+      if (downloadLink) {
+          downloadLink.href = 'downloads.html?title=' + encodeURIComponent(game.title);
+      }
+
+      // ============================================================
+      // FALLBACK
+      // ============================================================
+      if (gameTitle && !gameData[gameTitle]) {
+        console.warn('Game not found: ' + gameTitle + '. Showing Cyberpunk 2077 instead.');
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+          position: fixed;
+          top: 100px;
+          right: 30px;
+          padding: 14px 24px;
+          background: rgba(224,96,96,0.9);
+          border-radius: 12px;
+          color: white;
+          font-weight: 500;
+          z-index: 9999;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+          font-family: 'Inter', sans-serif;
+          font-size: 0.9rem;
+        `;
+        notification.textContent = '⚠️ Game "' + gameTitle + '" not found. Showing Cyberpunk 2077.';
+        document.body.appendChild(notification);
+        setTimeout(function() {
+          notification.style.opacity = '0';
+          notification.style.transition = 'opacity 0.5s ease';
+          setTimeout(function() { notification.remove(); }, 500);
+        }, 4000);
+      }
+
+    });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>

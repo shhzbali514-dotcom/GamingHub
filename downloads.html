@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Downloads - Gaming Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loader" class="loader-overlay">
+    <div class="loader-ring"></div>
+    <span class="loader-text">LOADING HUB</span>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particlesCanvas"></canvas>
+
+  <nav class="navbar glass-nav" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="login.html" class="btn-neon">Sign In</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px;">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>⬇ Downloads</h2>
+        <span class="sub-label">Get your games here</span>
+      </div>
+
+      <!-- ===== DYNAMIC DOWNLOAD CARD ===== -->
+      <div class="glass-panel animate-fade-up" id="downloadContainer" style="max-width:800px;margin:0 auto;text-align:left;">
+        <!-- Content will be injected by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+          <p>Premium gaming platform since 2026</p>
+          <div class="social-links">
+            <a href="https://github.com/shhzbali514-dotcom" target="_blank" rel="noopener noreferrer"><span>🎮</span></a>
+            <a href="https://www.linkedin.com/in/shahzaib-tahir-b6a39b426/" target="_blank" rel="noopener noreferrer"><span>⚡</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61558559640165" target="_blank" rel="noopener noreferrer"><span>📺</span></a>
+            <a href="https://www.instagram.com/shahzaibdev7/" target="_blank" rel="noopener noreferrer"><span>▶️</span></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="games.html">Games</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="news.html">News</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact</a>
+          <a href="system-requirements.html">System Req.</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="login.html">Account</a>
+        </div>
+        <div class="footer-credit">
+          <p>© 2026 Gaming Hub · crafted by <strong>Shahzaib Tahir</strong></p>
+          <p class="footer-bio">Frontend Developer · UI Animation · React</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== DYNAMIC JAVASCRIPT ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+      const downloadData = {
+        'Cyberpunk 2077': {
+          title: 'Cyberpunk 2077',
+          image: 'CyberPunk More.jpg',
+          size: '70 GB',
+          version: 'v2.1.0',
+          updated: 'July 28, 2026',
+          directLink: '#',
+          torrentLink: '#',
+          officialLink: 'https://www.cyberpunk.net/',
+          mirrors: ['Mirror 1', 'Mirror 2', 'Mirror 3'],
+          installation: [
+            'Download the game files using any of the buttons above',
+            'Extract the archive using WinRAR or 7-Zip',
+            'Run the setup.exe file',
+            'Follow the installation wizard instructions',
+            'Launch the game from your desktop'
+          ]
+        },
+        'God of War': {
+          title: 'God of War',
+          image: 'god of war more.jpg ',
+          size: '70 GB',
+          version: 'v1.1.2',
+          updated: 'July 25, 2026',
+          directLink: '#',
+          torrentLink: '#',
+          officialLink: 'https://www.playstation.com/games/god-of-war/',
+          mirrors: ['Mirror 1', 'Mirror 2', 'Mirror 3'],
+          installation: [
+            'Download the game files using any of the buttons above',
+            'Extract the archive using WinRAR or 7-Zip',
+            'Run the setup.exe file',
+            'Follow the installation wizard instructions',
+            'Launch the game from your desktop'
+          ]
+        },
+        'The Last of Us': {
+          title: 'The Last of Us',
+          image: 'LAst OF uS.jpg',
+          size: '100 GB',
+          version: 'v1.0.5',
+          updated: 'July 20, 2026',
+          directLink: '#',
+          torrentLink: '#',
+          officialLink: 'https://www.playstation.com/games/the-last-of-us/',
+          mirrors: ['Mirror 1', 'Mirror 2', 'Mirror 3'],
+          installation: [
+            'Download the game files using any of the buttons above',
+            'Extract the archive using WinRAR or 7-Zip',
+            'Run the setup.exe file',
+            'Follow the installation wizard instructions',
+            'Launch the game from your desktop'
+          ]
+        },
+        'Halo Infinite': {
+          title: 'Halo Infinite',
+          image: 'halo infinite more.jpg',
+          size: '50 GB',
+          version: 'v1.2.0',
+          updated: 'July 15, 2026',
+          directLink: '#',
+          torrentLink: '#',
+          officialLink: 'https://www.halowaypoint.com/',
+          mirrors: ['Mirror 1', 'Mirror 2', 'Mirror 3'],
+          installation: [
+            'Download the game files using any of the buttons above',
+            'Extract the archive using WinRAR or 7-Zip',
+            'Run the setup.exe file',
+            'Follow the installation wizard instructions',
+            'Launch the game from your desktop'
+          ]
+        },
+        'Elden Ring': {
+          title: 'Elden Ring',
+          image: 'elden ring more.jpg',
+          size: '60 GB',
+          version: 'v1.08',
+          updated: 'July 10, 2026',
+          directLink: '#',
+          torrentLink: '#',
+          officialLink: 'https://en.bandainamcoent.eu/elden-ring/',
+          mirrors: ['Mirror 1', 'Mirror 2', 'Mirror 3'],
+          installation: [
+            'Download the game files using any of the buttons above',
+            'Extract the archive using WinRAR or 7-Zip',
+            'Run the setup.exe file',
+            'Follow the installation wizard instructions',
+            'Launch the game from your desktop'
+          ]
+        },
+        'God of War Ragnarok': {
+          title: 'God of War Ragnarok',
+          image: 'https://placehold.co/150x200/1a1a2e/7b2ffc?text=God+of+War+Ragnarok',
+          size: '90 GB',
+          version: 'v1.0.3',
+          updated: 'July 28, 2026',
+          directLink: '#',
+          torrentLink: '#',
+          officialLink: 'https://www.playstation.com/games/god-of-war-ragnarok/',
+          mirrors: ['Mirror 1', 'Mirror 2', 'Mirror 3'],
+          installation: [
+            'Download the game files using any of the buttons above',
+            'Extract the archive using WinRAR or 7-Zip',
+            'Run the setup.exe file',
+            'Follow the installation wizard instructions',
+            'Launch the game from your desktop'
+          ]
+        },
+        'Spider-Man 2': {
+          title: 'Spider-Man 2',
+          image: 'SpiderMan 2.jpg',
+          size: '80 GB',
+          version: 'v1.1.0',
+          updated: 'July 22, 2026',
+          directLink: '#',
+          torrentLink: '#',
+          officialLink: 'https://www.playstation.com/games/marvels-spider-man-2/',
+          mirrors: ['Mirror 1', 'Mirror 2', 'Mirror 3'],
+          installation: [
+            'Download the game files using any of the buttons above',
+            'Extract the archive using WinRAR or 7-Zip',
+            'Run the setup.exe file',
+            'Follow the installation wizard instructions',
+            'Launch the game from your desktop'
+          ]
+        },
+        // 8. HORIZON FORBIDDEN WEST - ADDED ✅
+        'Horizon Forbidden West': {
+          title: 'Horizon Forbidden West',
+          image: 'Horizon Forbidden West.jpg',
+          size: '150 GB',
+          version: 'v1.0.2',
+          updated: 'July 30, 2026',
+          directLink: '#',
+          torrentLink: '#',
+          officialLink: 'https://www.playstation.com/games/horizon-forbidden-west/',
+          mirrors: ['Mirror 1', 'Mirror 2', 'Mirror 3'],
+          installation: [
+            'Download the game files using any of the buttons above',
+            'Extract the archive using WinRAR or 7-Zip',
+            'Run the setup.exe file',
+            'Follow the installation wizard instructions',
+            'Launch the game from your desktop'
+          ]
+        }
+      };
+      // ============================================================
+      // GET GAME FROM URL
+      // ============================================================
+      // ============================================================
+// GET GAME FROM URL
+// ============================================================
+
+const urlParams = new URLSearchParams(window.location.search);
+
+// Get game title from URL
+let gameTitle = urlParams.get('title');
+
+// Decode title if available
+if (gameTitle) {
+    gameTitle = decodeURIComponent(gameTitle);
+}
+
+// If no title is provided, use Cyberpunk 2077 silently
+if (!gameTitle) {
+    gameTitle = 'Cyberpunk 2077';
+}
+
+// Find game data
+const game = downloadData[gameTitle] || downloadData['Cyberpunk 2077'];
+
+      // ============================================================
+      // RENDER DOWNLOAD PAGE
+      // ============================================================
+      const container = document.getElementById('downloadContainer');
+
+      function renderDownloadPage(game) {
+        container.innerHTML = `
+          <!-- Game Info Header -->
+          <div style="display:flex;align-items:center;gap:30px;flex-wrap:wrap;margin-bottom:30px;">
+            <img src="${game.image}" alt="${game.title}" style="border-radius:var(--border-radius);width:150px;" />
+            <div>
+              <h3 style="font-family:var(--font-display);font-size:1.6rem;color:var(--white);">${game.title}</h3>
+              <div style="display:flex;gap:20px;flex-wrap:wrap;margin:8px 0;">
+                <span style="color:var(--text-muted);">📦 ${game.size}</span>
+                <span style="color:var(--text-muted);">📌 ${game.version}</span>
+                <span style="color:var(--text-muted);">🔄 Updated: ${game.updated}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Download Buttons -->
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
+            <a href="${game.directLink}" class="btn-primary" style="flex:1;text-align:center;padding:12px 20px;font-size:0.85rem;">⬇ Download (Direct)</a>
+            <a href="${game.torrentLink}" class="btn-outline" style="flex:1;text-align:center;padding:12px 20px;font-size:0.85rem;">🧲 Torrent</a>
+            <a href="${game.officialLink}" target="_blank" class="btn-outline" style="flex:1;text-align:center;padding:12px 20px;font-size:0.85rem;">🌐 Official Site</a>
+          </div>
+
+          <!-- Mirrors -->
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px;">
+            ${game.mirrors.map(function(mirror) {
+              return `<button class="btn-outline" style="flex:1;text-align:center;padding:10px 20px;font-size:0.8rem;">${mirror}</button>`;
+            }).join('')}
+          </div>
+
+          <!-- Warning Box -->
+          <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.15);border-radius:var(--border-radius);padding:16px 20px;margin-bottom:24px;">
+            <p style="color:#ef4444;font-size:0.9rem;">
+              ⚠️ <strong>Warning:</strong> Always verify files after download. Gaming Hub is not responsible 
+              for any issues with third-party downloads.
+            </p>
+          </div>
+
+          <!-- Installation Guide -->
+          <div style="border-top:1px solid var(--card-border);padding-top:24px;">
+            <h4 style="color:var(--white);margin-bottom:12px;">📖 Installation Guide</h4>
+            <ol style="color:var(--text-secondary);line-height:2.2;padding-left:20px;">
+              ${game.installation.map(function(step) {
+                return `<li>${step}</li>`;
+              }).join('')}
+            </ol>
+          </div>
+
+          <!-- Back to Game -->
+          <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--card-border);text-align:center;">
+            <a href="game.html?title=${encodeURIComponent(game.title)}" class="btn-outline" style="padding:10px 32px;font-size:0.85rem;">
+              ← Back to ${game.title}
+            </a>
+          </div>
+        `;
+      }
+
+      renderDownloadPage(game);
+
+      // ============================================================
+      // FALLBACK: If no game found
+      // ============================================================
+      if (gameTitle && !downloadData[gameTitle]) {
+         console.warn('Game not found: ' + gameTitle + '. Showing Cyberpunk 2077 instead.');
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+          position: fixed;
+          top: 100px;
+          right: 30px;
+          padding: 14px 24px;
+          background: rgba(239,68,68,0.9);
+          border-radius: 12px;
+          color: white;
+          font-weight: 500;
+          z-index: 9999;
+          box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+          font-family: 'Inter', sans-serif;
+          font-size: 0.9rem;
+        `;
+        notification.textContent = '⚠️ Game "' + gameTitle + '" not found. Showing Cyberpunk 2077.';
+        document.body.appendChild(notification);
+        setTimeout(function() {
+          notification.style.opacity = '0';
+          notification.style.transition = 'opacity 0.5s ease';
+          setTimeout(function() { notification.remove(); }, 500);
+        }, 4000);
+      }
+
+    });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>

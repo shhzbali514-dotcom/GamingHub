@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Gaming Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loader" class="loader-overlay">
+    <div class="loader-ring"></div>
+    <span class="loader-text">LOADING HUB</span>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particlesCanvas"></canvas>
+
+  <nav class="navbar glass-nav" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="login.html" class="btn-neon">Sign In</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px;">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>About Gaming Hub</h2>
+      </div>
+      <div class="glass-panel animate-fade-up" style="max-width:800px;margin:0 auto;text-align:left;">
+        <div style="display:flex;align-items:center;gap:40px;flex-wrap:wrap;">
+          <div style="flex:1;min-width:200px;">
+            <div style="width:180px;height:180px;border-radius:50%;background:var(--gradient-primary);display:flex;align-items:center;justify-content:center;font-size:5rem;margin:0 auto;">👨‍💻</div>
+          </div>
+          <div style="flex:2;">
+            <h2 style="font-family:var(--font-display);font-size:2rem;">Shahzaib Tahir</h2>
+            <p style="color:var(--neon-blue);font-weight:600;font-size:1.1rem;">Frontend Web Developer</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin:12px 0;">
+              <span style="padding:4px 16px;background:rgba(0,212,255,0.1);border-radius:20px;border:1px solid rgba(0,212,255,0.2);font-size:0.8rem;">HTML</span>
+              <span style="padding:4px 16px;background:rgba(0,212,255,0.1);border-radius:20px;border:1px solid rgba(0,212,255,0.2);font-size:0.8rem;">CSS</span>
+              <span style="padding:4px 16px;background:rgba(0,212,255,0.1);border-radius:20px;border:1px solid rgba(0,212,255,0.2);font-size:0.8rem;">JavaScript</span>
+              <span style="padding:4px 16px;background:rgba(0,212,255,0.1);border-radius:20px;border:1px solid rgba(0,212,255,0.2);font-size:0.8rem;">React</span>
+              <span style="padding:4px 16px;background:rgba(0,212,255,0.1);border-radius:20px;border:1px solid rgba(0,212,255,0.2);font-size:0.8rem;">Responsive Design</span>
+              <span style="padding:4px 16px;background:rgba(0,212,255,0.1);border-radius:20px;border:1px solid rgba(0,212,255,0.2);font-size:0.8rem;">UI Animation</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:30px;border-top:1px solid var(--glass-border);padding-top:30px;">
+          <h3 style="font-family:var(--font-display);font-size:1.2rem;margin-bottom:12px;">Bio</h3>
+          <p style="color:var(--gray-text);font-size:1.05rem;line-height:1.8;">
+            I am a passionate Frontend Web Developer currently pursuing a Diploma in Information Technology Engineering. 
+            I enjoy creating modern websites, gaming experiences, responsive interfaces, and beautiful UI animations.
+          </p>
+          <p style="color:var(--gray-text);font-size:1.05rem;line-height:1.8;margin-top:12px;">
+            Gaming Hub is my vision of a premium gaming platform where gamers can discover, review, and download 
+            their favorite games in a stunning, futuristic interface.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+          <p>Premium gaming platform since 2026</p>
+          <div class="social-links">
+            <a href="https://github.com/shhzbali514-dotcom" target="_blank" rel="noopener noreferrer"><span>🎮</span></a>
+            <a href="https://www.linkedin.com/in/shahzaib-tahir-b6a39b426/" target="_blank" rel="noopener noreferrer"><span>⚡</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61558559640165" target="_blank" rel="noopener noreferrer"><span>📺</span></a>
+            <a href="https://www.instagram.com/shahzaibdev7/" target="_blank" rel="noopener noreferrer"><span>▶️</span></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="games.html">Games</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="news.html">News</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact</a>
+          <a href="system-requirements.html">System Req.</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="login.html">Account</a>
+        </div>
+        <div class="footer-credit">
+          <p>© 2026 Gaming Hub · crafted by <strong>Shahzaib Tahir</strong></p>
+          <p class="footer-bio">Frontend Developer · UI Animation · React</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

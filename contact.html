@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Gaming Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loader" class="loader-overlay">
+    <div class="loader-ring"></div>
+    <span class="loader-text">LOADING HUB</span>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particlesCanvas"></canvas>
+
+  <nav class="navbar glass-nav" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li class="nav-cta"><a href="login.html" class="btn-neon">Sign In</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px;">
+    <div class="container">
+      <div class="section-header animate-fade-up">
+        <h2>📬 Contact Us</h2>
+        <span class="sub-label">We'd love to hear from you</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+
+        <!-- ===== CONTACT FORM ===== -->
+        <div class="glass-panel animate-fade-up" style="text-align:left;">
+          <h3 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:20px;">Send a Message</h3>
+          
+          <!-- Success Message -->
+          <div id="successMessage" style="display:none;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.25);border-radius:12px;padding:20px 24px;margin-bottom:20px;text-align:center;">
+            <div style="font-size:2.5rem;margin-bottom:8px;">✅</div>
+            <h4 style="color:#22c55e;font-family:var(--font-display);font-size:1.2rem;margin-bottom:4px;">Message Sent Successfully!</h4>
+            <p style="color:var(--text-secondary);font-size:0.9rem;">Thank you for reaching out. We'll get back to you soon! 🎮</p>
+          </div>
+
+          <form id="contactForm">
+            <div style="margin-bottom:16px;">
+              <label style="display:block;margin-bottom:6px;color:var(--gray-text);font-weight:600;">Your Name</label>
+              <input type="text" id="userName" placeholder="Shahzaib TR" required style="width:100%;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:12px;color:var(--white);font-family:var(--font-primary);transition:var(--transition);outline:none;" />
+            </div>
+            <div style="margin-bottom:16px;">
+              <label style="display:block;margin-bottom:6px;color:var(--gray-text);font-weight:600;">Email Address</label>
+              <input type="email" id="userEmail" placeholder="john@example.com" required style="width:100%;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:12px;color:var(--white);font-family:var(--font-primary);transition:var(--transition);outline:none;" />
+            </div>
+            <div style="margin-bottom:16px;">
+              <label style="display:block;margin-bottom:6px;color:var(--gray-text);font-weight:600;">Subject</label>
+              <input type="text" id="userSubject" placeholder="Game inquiry" required style="width:100%;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:12px;color:var(--white);font-family:var(--font-primary);transition:var(--transition);outline:none;" />
+            </div>
+            <div style="margin-bottom:20px;">
+              <label style="display:block;margin-bottom:6px;color:var(--gray-text);font-weight:600;">Message</label>
+              <textarea id="userMessage" rows="4" placeholder="Your message here..." required style="width:100%;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:12px;color:var(--white);font-family:var(--font-primary);resize:vertical;transition:var(--transition);outline:none;"></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="btn-primary" style="width:100%;">Send Message</button>
+          </form>
+        </div>
+
+        <!-- ===== CONTACT INFO WITH MAP ===== -->
+        <div class="animate-fade-up delay-1">
+          
+          <!-- ===== GOOGLE MAP ===== -->
+          <div class="glass-panel" style="text-align:left;margin-bottom:24px;padding:20px;">
+            <h3 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:16px;">📍 Find Us</h3>
+            <div style="border-radius:var(--border-radius);overflow:hidden;border:1px solid var(--glass-border);">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3618.234567890123!2d74.3456789!3d31.456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e2d94a6f%3A0x7c8e0b6e4e8e4e8e!2sLahore%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000" 
+                width="100%" 
+                height="220" 
+                style="border:0;display:block;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Gaming Hub Location Map">
+              </iframe>
+            </div>
+            <div style="margin-top:12px;display:flex;gap:16px;flex-wrap:wrap;font-size:0.85rem;color:var(--text-muted);">
+              <span>📍 Islamabad, Pakistan</span>
+              <span>🕐 24/7 Available</span>
+              <span>📞 +92 3234895731</span>
+            </div>
+          </div>
+
+          <!-- ===== SOCIAL LINKS ===== -->
+          <div class="glass-panel" style="text-align:left;">
+            <h3 style="font-family:var(--font-display);font-size:1.4rem;margin-bottom:16px;">📱 Connect With Us</h3>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <a href="https://github.com/shhzbali514-dotcom" target="_blank" class="btn-outline" style="flex:1;text-align:center;padding:10px 16px;font-size:0.85rem;">🐙 GitHub</a>
+              <a href="https://www.linkedin.com/in/shahzaib-tahir-b6a39b426/" target="_blank" class="btn-outline" style="flex:1;text-align:center;padding:10px 16px;font-size:0.85rem;">💼 LinkedIn</a>
+              <a href="https://www.instagram.com/shahzaibdev7/" target="_blank" class="btn-outline" style="flex:1;text-align:center;padding:10px 16px;font-size:0.85rem;">📸 Instagram</a>
+              <a href="https://www.facebook.com/profile.php?id=61558559640165" target="_blank" class="btn-outline" style="flex:1;text-align:center;padding:10px 16px;font-size:0.85rem;">📘 Facebook</a>
+            </div>
+            <div style="margin-top:16px;padding-top:16px;border-top:1px solid var(--glass-border);">
+              <p style="color:var(--gray-text);">✉️ <strong>Email:</strong> shahzaibwork247@gmail.com</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+          <p>Premium gaming platform since 2026</p>
+          <div class="social-links">
+            <a href="https://github.com/shhzbali514-dotcom" target="_blank" rel="noopener noreferrer"><span>🎮</span></a>
+            <a href="https://www.linkedin.com/in/shahzaib-tahir-b6a39b426/" target="_blank" rel="noopener noreferrer"><span>⚡</span></a>
+            <a href="https://www.facebook.com/profile.php?id=61558559640165" target="_blank" rel="noopener noreferrer"><span>📺</span></a>
+            <a href="https://www.instagram.com/shahzaibdev7/" target="_blank" rel="noopener noreferrer"><span>▶️</span></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="games.html">Games</a>
+          <a href="reviews.html">Reviews</a>
+          <a href="news.html">News</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="contact.html">Contact</a>
+          <a href="system-requirements.html">System Req.</a>
+          <a href="downloads.html">Downloads</a>
+          <a href="login.html">Account</a>
+        </div>
+        <div class="footer-credit">
+          <p>© 2026 Gaming Hub · crafted by <strong>Shahzaib Tahir</strong></p>
+          <p class="footer-bio">Frontend Developer · UI Animation · React</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CONTACT FORM JAVASCRIPT ===== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('contactForm');
+      const successMessage = document.getElementById('successMessage');
+      const submitBtn = document.getElementById('submitBtn');
+
+      const nameInput = document.getElementById('userName');
+      const emailInput = document.getElementById('userEmail');
+      const subjectInput = document.getElementById('userSubject');
+      const messageInput = document.getElementById('userMessage');
+
+      const inputs = [nameInput, emailInput, subjectInput, messageInput];
+
+      inputs.forEach(function(input) {
+        input.addEventListener('focus', function() {
+          this.style.borderColor = 'rgba(124,109,212,0.3)';
+          this.style.boxShadow = '0 0 20px rgba(124,109,212,0.05)';
+        });
+        input.addEventListener('blur', function() {
+          this.style.borderColor = 'var(--glass-border)';
+          this.style.boxShadow = 'none';
+        });
+      });
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const subject = subjectInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if (!name || !email || !subject || !message) {
+          if (!name) nameInput.style.borderColor = 'rgba(239,68,68,0.5)';
+          if (!email) emailInput.style.borderColor = 'rgba(239,68,68,0.5)';
+          if (!subject) subjectInput.style.borderColor = 'rgba(239,68,68,0.5)';
+          if (!message) messageInput.style.borderColor = 'rgba(239,68,68,0.5)';
+
+          form.classList.add('shake');
+          setTimeout(function() { form.classList.remove('shake'); }, 600);
+          return;
+        }
+
+        inputs.forEach(function(input) {
+          input.style.borderColor = 'var(--glass-border)';
+        });
+
+        successMessage.style.display = 'block';
+        successMessage.style.animation = 'fadeUp 0.6s ease forwards';
+
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = '✓ Sent!';
+        submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+        submitBtn.style.pointerEvents = 'none';
+
+        setTimeout(function() {
+          form.reset();
+          successMessage.style.display = 'none';
+          submitBtn.textContent = originalText;
+          submitBtn.style.background = '';
+          submitBtn.style.pointerEvents = 'auto';
+        }, 4000);
+
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes shake {
+          0%, 100% { transform: translateX(0); }
+          10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+          20%, 40%, 60%, 80% { transform: translateX(8px); }
+        }
+        .shake { animation: shake 0.6s ease-in-out; }
+      `;
+      document.head.appendChild(style);
+
+    });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+</html>

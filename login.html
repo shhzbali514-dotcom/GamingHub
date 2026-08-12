@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Gaming Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="loader" class="loader-overlay">
+    <div class="loader-ring"></div>
+    <span class="loader-text">LOADING HUB</span>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <canvas id="particlesCanvas"></canvas>
+
+  <nav class="navbar glass-nav" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">GAMING<span class="hub">HUB</span></span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="login.html" class="btn-neon">Sign In</a></li>
+      </ul>
+      <div class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section class="section" style="padding-top:120px;min-height:80vh;display:flex;align-items:center;">
+    <div class="container">
+      <div class="glass-panel animate-fade-up" style="max-width:480px;margin:0 auto;text-align:left;">
+        <div style="text-align:center;margin-bottom:30px;">
+          <div style="font-size:4rem;margin-bottom:8px;">🎮</div>
+          <h2 style="font-family:var(--font-display);font-size:2rem;">Welcome Back</h2>
+          <p style="color:var(--gray-text);">Sign in to continue your gaming journey</p>
+        </div>
+
+        <form>
+          <div style="margin-bottom:16px;">
+            <label style="display:block;margin-bottom:6px;color:var(--gray-text);font-weight:600;">Email / Username</label>
+            <input type="text" placeholder="Enter your email" style="width:100%;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:12px;color:var(--white);font-family:var(--font-primary);" />
+          </div>
+          <div style="margin-bottom:20px;">
+            <label style="display:block;margin-bottom:6px;color:var(--gray-text);font-weight:600;">Password</label>
+            <div style="position:relative;">
+              <input type="password" id="loginPassword" placeholder="Enter your password" style="width:100%;padding:14px 18px;background:rgba(255,255,255,0.05);border:1px solid var(--glass-border);border-radius:12px;color:var(--white);font-family:var(--font-primary);" />
+              <button type="button" id="togglePassword" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:transparent;border:none;color:var(--gray-text);cursor:pointer;font-size:1.2rem;">👁️</button>
+            </div>
+          </div>
+
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+            <label style="color:var(--gray-text);font-size:0.9rem;cursor:pointer;">
+              <input type="checkbox" style="accent-color:var(--neon-blue);" /> Remember Me
+            </label>
+            <a href="#" style="color:var(--neon-blue);font-size:0.9rem;">Forgot Password?</a>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%;">Sign In</button>
+        </form>
+
+        <div style="margin:24px 0;text-align:center;color:var(--gray-text);font-size:0.9rem;">or continue with</div>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;">
+          <button class="btn-outline" style="flex:1;text-align:center;padding:10px 12px;font-size:0.8rem;border-color:rgba(255,255,255,0.1);">Google</button>
+          <button class="btn-outline" style="flex:1;text-align:center;padding:10px 12px;font-size:0.8rem;border-color:rgba(255,255,255,0.1);">Discord</button>
+          <button class="btn-outline" style="flex:1;text-align:center;padding:10px 12px;font-size:0.8rem;border-color:rgba(255,255,255,0.1);">Steam</button>
+        </div>
+
+        <div style="text-align:center;padding-top:20px;border-top:1px solid var(--glass-border);">
+          <p style="color:var(--gray-text);">Don't have an account? <a href="signup.html" style="color:var(--neon-blue);font-weight:600;">Sign Up</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" style="padding:20px 0;">
+    <div class="container">
+      <div class="footer-credit" style="text-align:center;">
+        <p>© 2026 Gaming Hub · crafted by <strong>Shahzaib Tahir</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
