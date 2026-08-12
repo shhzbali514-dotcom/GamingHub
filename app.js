@@ -1,7 +1,6 @@
 /* ============================================================
-   js/app.js
+   app.js
    Gaming Hub - Main Application Script
-   All functionality in one file
    ============================================================ */
 
 (function() {
