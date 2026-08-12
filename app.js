@@ -837,3 +837,316 @@
     };
 
 })();
+
+
+
+
+// ============================================================
+// RESPONSIVE FIX - Text & Elements Optimizer
+// ============================================================
+function optimizeResponsive() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    const ratio = width / height;
+    
+    // Body and container fixes
+    document.body.style.overflowX = 'hidden';
+    
+    // Fix all containers
+    document.querySelectorAll('.container').forEach(function(el) {
+        el.style.maxWidth = '100%';
+        el.style.paddingLeft = Math.max(8, Math.min(20, width * 0.02)) + 'px';
+        el.style.paddingRight = Math.max(8, Math.min(20, width * 0.02)) + 'px';
+        el.style.overflow = 'hidden';
+    });
+    
+    // Fix hero section
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.style.paddingLeft = Math.max(10, width * 0.02) + 'px';
+        hero.style.paddingRight = Math.max(10, width * 0.02) + 'px';
+        hero.style.overflow = 'hidden';
+    }
+    
+    const heroContent = document.querySelector('.hero-content');
+    if (heroContent) {
+        heroContent.style.maxWidth = '100%';
+        heroContent.style.paddingLeft = Math.max(4, width * 0.01) + 'px';
+        heroContent.style.paddingRight = Math.max(4, width * 0.01) + 'px';
+        heroContent.style.overflow = 'hidden';
+    }
+    
+    // Fix hero title
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        heroTitle.style.fontSize = Math.min(
+            Math.max(1.2, width * 0.045),
+            4.5
+        ) + 'rem';
+        heroTitle.style.wordWrap = 'break-word';
+        heroTitle.style.overflowWrap = 'break-word';
+        heroTitle.style.maxWidth = '100%';
+    }
+    
+    // Fix hero subtitle
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) {
+        heroSubtitle.style.fontSize = Math.min(
+            Math.max(0.6, width * 0.018),
+            1.2
+        ) + 'rem';
+        heroSubtitle.style.wordWrap = 'break-word';
+        heroSubtitle.style.overflowWrap = 'break-word';
+        heroSubtitle.style.maxWidth = '100%';
+        heroSubtitle.style.padding = '0 4px';
+    }
+    
+    // Fix hero badge
+    const heroBadge = document.querySelector('.hero-badge');
+    if (heroBadge) {
+        heroBadge.style.fontSize = Math.min(
+            Math.max(0.4, width * 0.012),
+            0.75
+        ) + 'rem';
+        heroBadge.style.padding = Math.min(
+            Math.max(2, width * 0.008),
+            6
+        ) + 'px ' + Math.min(
+            Math.max(6, width * 0.025),
+            18
+        ) + 'px';
+        heroBadge.style.whiteSpace = 'nowrap';
+    }
+    
+    // Fix search bar
+    const search = document.querySelector('.hero-search');
+    if (search) {
+        search.style.maxWidth = Math.min(460, width * 0.85) + 'px';
+        search.style.margin = '0 auto ' + Math.min(14, width * 0.03) + 'px';
+    }
+    
+    const searchInput = document.querySelector('.hero-search input');
+    if (searchInput) {
+        searchInput.style.fontSize = Math.min(
+            Math.max(0.65, width * 0.018),
+            0.95
+        ) + 'rem';
+        searchInput.style.padding = Math.min(
+            Math.max(6, width * 0.02),
+            14
+        ) + 'px ' + Math.min(
+            Math.max(10, width * 0.025),
+            22
+        ) + 'px';
+        searchInput.style.minWidth = '0';
+    }
+    
+    const searchBtn = document.querySelector('.hero-search button');
+    if (searchBtn) {
+        searchBtn.style.padding = Math.min(
+            Math.max(6, width * 0.02),
+            14
+        ) + 'px ' + Math.min(
+            Math.max(10, width * 0.025),
+            22
+        ) + 'px';
+        searchBtn.style.fontSize = Math.min(
+            Math.max(0.6, width * 0.018),
+            1
+        ) + 'rem';
+    }
+    
+    // Fix buttons
+    document.querySelectorAll('.hero-buttons .btn-primary, .hero-buttons .btn-outline').forEach(function(btn) {
+        btn.style.fontSize = Math.min(
+            Math.max(0.5, width * 0.015),
+            0.9
+        ) + 'rem';
+        btn.style.padding = Math.min(
+            Math.max(6, width * 0.02),
+            14
+        ) + 'px ' + Math.min(
+            Math.max(12, width * 0.035),
+            30
+        ) + 'px';
+        btn.style.maxWidth = '100%';
+        btn.style.boxSizing = 'border-box';
+    });
+    
+    // Fix game cards
+    document.querySelectorAll('.game-card').forEach(function(card) {
+        card.style.width = '100%';
+        card.style.maxWidth = '100%';
+    });
+    
+    document.querySelectorAll('.game-card-body h3').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.5, width * 0.015),
+            1
+        ) + 'rem';
+        el.style.wordWrap = 'break-word';
+        el.style.overflowWrap = 'break-word';
+        el.style.whiteSpace = 'normal';
+        el.style.maxWidth = '100%';
+    });
+    
+    document.querySelectorAll('.game-card-body .game-meta').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.4, width * 0.012),
+            0.8
+        ) + 'rem';
+        el.style.flexWrap = 'wrap';
+    });
+    
+    // Fix category cards
+    document.querySelectorAll('.category-card span').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.4, width * 0.014),
+            0.9
+        ) + 'rem';
+        el.style.wordWrap = 'break-word';
+        el.style.overflowWrap = 'break-word';
+        el.style.maxWidth = '100%';
+    });
+    
+    // Fix news cards
+    document.querySelectorAll('.news-card-body h3').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.6, width * 0.016),
+            0.95
+        ) + 'rem';
+        el.style.wordWrap = 'break-word';
+        el.style.overflowWrap = 'break-word';
+    });
+    
+    document.querySelectorAll('.news-card-body p').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.5, width * 0.014),
+            0.85
+        ) + 'rem';
+        el.style.wordWrap = 'break-word';
+        el.style.overflowWrap = 'break-word';
+    });
+    
+    // Fix section headers
+    document.querySelectorAll('.section-header h2').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.8, width * 0.025),
+            2.4
+        ) + 'rem';
+        el.style.wordWrap = 'break-word';
+        el.style.overflowWrap = 'break-word';
+        el.style.maxWidth = '100%';
+    });
+    
+    // Fix stats
+    document.querySelectorAll('.stat-number').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.8, width * 0.022),
+            2
+        ) + 'rem';
+    });
+    
+    document.querySelectorAll('.stat-label').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.4, width * 0.012),
+            0.75
+        ) + 'rem';
+    });
+    
+    // Fix footer
+    document.querySelectorAll('.footer-links a').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.5, width * 0.014),
+            0.85
+        ) + 'rem';
+        el.style.wordWrap = 'break-word';
+        el.style.overflowWrap = 'break-word';
+    });
+    
+    // Fix newsletter
+    document.querySelectorAll('.newsletter p').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.6, width * 0.016),
+            0.95
+        ) + 'rem';
+        el.style.wordWrap = 'break-word';
+        el.style.overflowWrap = 'break-word';
+        el.style.padding = '0 4px';
+    });
+    
+    document.querySelectorAll('.newsletter-form input').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.6, width * 0.016),
+            0.9
+        ) + 'rem';
+        el.style.minWidth = width < 500 ? '100%' : '130px';
+    });
+    
+    document.querySelectorAll('.newsletter-form .btn-primary').forEach(function(el) {
+        el.style.fontSize = Math.min(
+            Math.max(0.55, width * 0.015),
+            0.85
+        ) + 'rem';
+        el.style.width = width < 500 ? '100%' : 'auto';
+    });
+    
+    // Fix glass panels
+    document.querySelectorAll('.glass-panel').forEach(function(el) {
+        el.style.padding = Math.min(
+            Math.max(10, width * 0.03),
+            36
+        ) + 'px ' + Math.min(
+            Math.max(8, width * 0.025),
+            32
+        ) + 'px';
+        el.style.margin = '0 ' + Math.min(
+            Math.max(2, width * 0.005),
+            16
+        ) + 'px';
+    });
+    
+    // Fix slider
+    document.querySelectorAll('.slider-track .game-card').forEach(function(el) {
+        el.style.minWidth = Math.min(
+            Math.max(60, width * 0.18),
+            200
+        ) + 'px';
+        el.style.flex = '0 0 ' + Math.min(
+            Math.max(40, width * 0.22),
+            200
+        ) + 'px';
+    });
+    
+    // Fix section padding
+    document.querySelectorAll('.section').forEach(function(el) {
+        el.style.padding = Math.min(
+            Math.max(12, width * 0.04),
+            60
+        ) + 'px 0';
+    });
+    
+    // Fix container overflow
+    document.querySelectorAll('.container').forEach(function(el) {
+        el.style.overflow = 'hidden';
+    });
+    
+    console.log('✅ Responsive optimized for width:', width, 'ratio:', ratio.toFixed(2));
+}
+
+// Run on load
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(optimizeResponsive, 100);
+});
+
+// Run on resize with debounce
+let resizeTimer;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(optimizeResponsive, 200);
+});
+
+// Run on orientation change
+window.addEventListener('orientationchange', function() {
+    setTimeout(optimizeResponsive, 500);
+});
