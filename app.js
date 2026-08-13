@@ -838,12 +838,6 @@
 
 })();
 
-
-
-
-// ============================================================
-// RESPONSIVE FIX - Text & Elements Optimizer
-// ============================================================
 function optimizeResponsive() {
     const width = window.innerWidth;
     const height = window.innerHeight;

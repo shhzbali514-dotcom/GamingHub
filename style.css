@@ -1,7 +1,6 @@
 /* ============================================================
-   css/style.css
+   style.css
    Gaming Hub - UNIVERSAL RESPONSIVE
-   All Aspect Ratios: 9:16, 19.5:9, 20:9, 18.5:9, 4:3, 3:2, 22.5:18, 17:11
    ============================================================ */
 
 /* ---------- RESET & BASE ---------- */
@@ -13,7 +12,6 @@
   box-sizing: border-box;
 }
 
-/* GLOBAL FIX - No horizontal scroll */
 html,
 body {
   overflow-x: hidden !important;
@@ -878,11 +876,6 @@ img {
   opacity: 0.5;
 }
 
-/* ============================================================
-   RESPONSIVE - ALL ASPECT RATIOS
-   ============================================================ */
-
-/* ---------- 9:16 (Standard Phones) ---------- */
 @media (max-aspect-ratio: 9/16) {
   .container {
     padding: 0 10px !important;
@@ -1004,7 +997,6 @@ img {
   }
 }
 
-/* ---------- 19.5:9 (iPhone 12/13/14/15/16 Pro Max) ---------- */
 @media (aspect-ratio: 19.5/9) {
   .container {
     padding: 0 14px !important;
@@ -1056,7 +1048,6 @@ img {
   }
 }
 
-/* ---------- 20:9 (Samsung S20/S21/S22/S23 Ultra, Pixel 7/8/9) ---------- */
 @media (aspect-ratio: 20/9) {
   .container {
     padding: 0 12px !important;
@@ -1135,7 +1126,6 @@ img {
   }
 }
 
-/* ---------- 18.5:9 (Samsung S8/S9/S10, Pixel 3/4) ---------- */
 @media (aspect-ratio: 18.5/9) {
   .container {
     padding: 0 12px !important;
@@ -1206,7 +1196,6 @@ img {
   }
 }
 
-/* ---------- 4:3 (iPad Mini, iPad Air) ---------- */
 @media (aspect-ratio: 4/3) {
   .container {
     padding: 0 30px !important;
@@ -1256,7 +1245,6 @@ img {
   }
 }
 
-/* ---------- 3:2 (iPad Pro, Surface Pro 7) ---------- */
 @media (aspect-ratio: 3/2) {
   .container {
     padding: 0 32px !important;
@@ -1298,7 +1286,6 @@ img {
   }
 }
 
-/* ---------- 22.5:18 (Surface Duo, Foldables) ---------- */
 @media (aspect-ratio: 22.5/18) {
   .container {
     padding: 0 24px !important;
@@ -1342,7 +1329,6 @@ img {
   }
 }
 
-/* ---------- 17:11 (Galaxy Z Fold 5, Foldables) ---------- */
 @media (aspect-ratio: 17/11) {
   .container {
     padding: 0 28px !important;
@@ -1386,7 +1372,6 @@ img {
   }
 }
 
-/* ---------- TABLET LANDSCAPE ---------- */
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .game-grid {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -1402,7 +1387,7 @@ img {
   }
 }
 
-/* ---------- DESKTOP (1200px+) ---------- */
+
 @media (min-width: 1200px) {
   .game-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -1417,7 +1402,7 @@ img {
   }
 }
 
-/* ---------- LAPTOP (992px - 1199px) ---------- */
+
 @media (max-width: 1199px) and (min-width: 992px) {
   .game-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1431,7 +1416,7 @@ img {
   }
 }
 
-/* ---------- LANDSCAPE PHONES ---------- */
+
 @media (max-height: 600px) and (orientation: landscape) {
   .hero {
     min-height: 100vh !important;
@@ -1453,7 +1438,7 @@ img {
   }
 }
 
-/* ---------- REDUCED MOTION ---------- */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -1474,7 +1459,6 @@ img {
   }
 }
 
-/* ---------- PRINT ---------- */
 @media print {
   .navbar,
   .footer,
@@ -1506,15 +1490,6 @@ img {
   }
 }
 
-
-
-
-
-/* ============================================================
-   EMERGENCY FIX - Text & Elements
-   ============================================================ */
-
-/* Global Text Fix */
 * {
   max-width: 100% !important;
   box-sizing: border-box !important;
@@ -1526,7 +1501,7 @@ html, body {
   max-width: 100% !important;
 }
 
-/* All Text Elements - Force Wrap */
+/* All Text Elements - */
 h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
   word-wrap: break-word !important;
   overflow-wrap: break-word !important;
@@ -1771,7 +1746,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
   }
 }
 
-/* Extra Small Devices */
 @media (max-width: 400px) {
   .hero-title {
     font-size: 1.2rem !important;
@@ -1793,12 +1767,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
   }
 }
 
-
-/* ============================================================
-   NAVBAR FIX - Horizontal Menu
-   ============================================================ */
-
-/* Force navbar to be horizontal on all devices except mobile */
 .nav-menu {
   display: flex !important;
   flex-direction: row !important;
@@ -1857,7 +1825,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
   display: none !important;
 }
 
-/* Mobile Responsive - Show hamburger on small screens */
 @media (max-width: 991px) {
   .nav-menu {
     position: fixed !important;
@@ -1909,10 +1876,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
     height: 2px !important;
   }
 }
-
-/* ============================================================
-   IMAGES & CARDS FIX - No Overlapping + Theme Match
-   ============================================================ */
 
 /* Fix for all game cards - proper spacing */
 .game-card {
@@ -2049,10 +2012,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
   text-shadow: 0 0 10px rgba(0, 240, 255, 0.2) !important;
 }
 
-/* ============================================================
-   THEME MATCH - Extra Fixes
-   ============================================================ */
-
 /* Popular grid background */
 .popular-grid {
   background: transparent !important;
@@ -2083,7 +2042,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
   text-shadow: 0 0 20px rgba(251, 191, 36, 0.15) !important;
 }
 
-/* Fix for any white backgrounds */
+
 .game-card,
 .game-card-body,
 .game-card-image,
@@ -2102,11 +2061,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
   box-shadow: 0 8px 40px rgba(168, 85, 247, 0.08), 0 0 60px rgba(168, 85, 247, 0.03) !important;
 }
 
-/* ============================================================
-   RESPONSIVE FIXES FOR IMAGES
-   ============================================================ */
 
-/* Tablet */
 @media (max-width: 991px) {
   .game-grid {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -2181,7 +2136,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
   }
 }
 
-/* Extra Small */
 @media (max-width: 400px) {
   .game-grid {
     grid-template-columns: 1fr 1fr !important;
@@ -2207,15 +2161,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, .text, .heading, .subheading {
 }
 
 
-
-
-
-
-/* ============================================================
-   THEME MATCH - Dark Gaming Theme Fix
-   ============================================================ */
-
-/* ---------- BACKGROUND FIXES ---------- */
 body {
   background: #050508 !important;
 }
